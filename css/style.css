@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: rgb(214, 214, 214);
+    color: white;
+    font-family: 'Oswald';
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+header {
+  background: rgb(27, 27, 27);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
