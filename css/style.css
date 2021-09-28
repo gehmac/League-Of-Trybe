@@ -6,7 +6,7 @@
   
   body {
     background: rgb(214, 214, 214);
-    color: white;
+    color: black;
     font-family: 'Oswald';
     /* font-family: 'Times New Roman', Times, serif; */
 }
@@ -17,4 +17,9 @@ header {
   justify-content: space-around;
   align-items: center;
   align-content: center;
+}
+
+.principal {
+    display: flex;
+    flex-direction: row;
 }
