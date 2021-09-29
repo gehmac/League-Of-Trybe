@@ -74,7 +74,7 @@ const showInfo = ({
   lastSkinIndex = skinsAmount - 1;
   selectedChampionSkins = skins;
 
-  nameSection.innerText = name;
+  nameSection.innerText = `${name}`;
   titleSection.innerText = title;
   loreSection.innerHTML = lore;
   classSection.innerText = tags.join(`\n`);
