@@ -133,6 +133,7 @@ header .title {
 #left #site-search:focus {
   border-color: rgb(26, 125, 201);
   box-shadow: 0 0 8px 0 rgb(50, 121, 196);
+}
 
 .little-ball {
   font-size: 30px;

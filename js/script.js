@@ -77,7 +77,7 @@ const showInfo = ({
   nameSection.innerText = name;
   titleSection.innerText = title;
   loreSection.innerHTML = lore;
-  classSection.innerText = tags;
+  classSection.innerText = tags.join(`\n`);
   skinNameSection.innerText = 'Padrão';
   championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinIndex}.jpg`;
 
@@ -169,7 +169,7 @@ const searchChampion = async (event) => {
   const indexes = [];
   listInLowerCase.forEach((champion, index) => {
     if (champion.includes(keyValue)) indexes.push(index);
-  });  
+  });
   championsSection.innerHTML = '';
   indexes.forEach((index) => renderChampion(championsList[index]));
 }
