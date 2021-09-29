@@ -122,17 +122,23 @@ header .title {
   font-family: 'Merriweather', serif;
 }
 
-#left #search #input {
-  display: flex;
-  flex-direction: row;
+#left #site-search {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
 }
 
-#left #input #site-search {
-  padding: 10px;
-  border-radius: 20px 0 0 20px;
-  border: none;
-  
+.fa-search {
+  background-color: white;
 }
+
+#left #site-search:focus {
+  border-color: rgb(240, 157, 13);
+  box-shadow: 0 0 8px 0 rgb(13, 96, 240);
+}
+
+
 
 #rigth {
   display: flex;
@@ -146,7 +152,6 @@ header .title {
 }
 
 #rigth #hidden-section #champion-name {
-  
   font-size: 40px;
 }
 
