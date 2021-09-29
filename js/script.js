@@ -37,7 +37,7 @@ const showInfo = ({
   //troquei para html pois vem tags da api
   loreSection.innerHTML = lore;
   classSection.innerText = tags;
-  championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinNumber}.jpg`;
+  championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinIndex}.jpg`;
   skinsSection.innerText = `${skinsAmount} skins`;
 };
 
