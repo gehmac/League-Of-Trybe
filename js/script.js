@@ -2,10 +2,12 @@ const main = document.querySelector('.main');
 const sectionRigth = document.querySelector('#rigth')
 const championsHTML = document.querySelector('.champions');
 const championImg = document.querySelector('#champion-img');
+const skinNameSection = document.querySelector('.skin-name');
+
 
 let skinIndex = 0;
 let lastSkinIndex = 0;
-let selectedChampionSkinsNumbers = [];
+let selectedChampionSkins = [];
 
 const getChampionInfo = async (championName) => {
   const result = await fetch(`https://ddragon.leagueoflegends.com/cdn/11.19.1/data/pt_BR/champion/${championName}.json`);
@@ -26,11 +28,10 @@ const showInfo = ({
   const titleSection = document.querySelector('#champion-title');
   const loreSection = document.querySelector('#champion-lore');
   const classSection = document.querySelector('#champion-class');
-  const skinNameSection = document.querySelector('.skin-name');
   const skinsSection = document.querySelector('#skins-counter');
   const skinsAmount = skins.length;
   lastSkinIndex = skinsAmount - 1;
-  selectedChampionSkinsNumbers = skins.map((skin) => skin.num);
+  selectedChampionSkins = skins;
 
   nameSection.innerText = name;
   titleSection.innerText = title;
@@ -96,11 +97,13 @@ const changeSkinButtons = () => {
     const currentChampion = document.querySelector('.selected-champion');
     if (event.target.classList.contains('left-arrow') && skinIndex > 0) {
       skinIndex -= 1;
-      championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkinsNumbers[skinIndex]}.jpg`;
+      championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
+      skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
     }
     if (event.target.classList.contains('rigth-arrow') && skinIndex < lastSkinIndex) {
       skinIndex += 1;
-      championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkinsNumbers[skinIndex]}.jpg`;
+      championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
+      skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
     }
   }));
 }
