@@ -1,25 +1,84 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: rgb(214, 214, 214);
-    color: black;
-    font-family: 'Oswald';
-    /* font-family: 'Times New Roman', Times, serif; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(214, 214, 214);
+  color: black;
+  font-family: 'Oswald';
+  padding: 20px;
 }
 
 header {
-  background: rgb(27, 27, 27);
+  background-color: rgb(27, 27, 27);
+  color: green;
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
 }
 
-.principal {
-    display: flex;
-    flex-direction: row;
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#left {
+  padding: 20px 20px;
+  width: 40%;
+}
+
+#rigth {
+  width: 60%;
+  padding: 20px 30px;
+}
+
+.champions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: middle;
+  width: 100%;
+  cursor: pointer;
+}
+
+.champion {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  height: 90px;
+  transition: 0.2s;
+}
+
+.champion:hover {
+  height: 105px;
+  margin-bottom: 5px;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
+.skins-section {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  text-align: center;
+  font-size: 40px;
+  width: 10%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  font-size: 55px;
+}
+
+.champion-img {
+  width: 80%;
 }
