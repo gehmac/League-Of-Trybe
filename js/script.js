@@ -26,6 +26,7 @@ const showInfo = ({
   const titleSection = document.querySelector('#champion-title');
   const loreSection = document.querySelector('#champion-lore');
   const classSection = document.querySelector('#champion-class');
+  const skinNameSection = document.querySelector('.skin-name');
   const skinsSection = document.querySelector('#skins-counter');
   const skinsAmount = skins.length;
   lastSkinIndex = skinsAmount - 1;
@@ -35,6 +36,7 @@ const showInfo = ({
   titleSection.innerText = title;
   loreSection.innerHTML = lore;
   classSection.innerText = tags;
+  skinNameSection.innerText = 'Padrão';
   championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinIndex}.jpg`;
   skinsSection.innerText = `${skinsAmount} skins`;
 };
