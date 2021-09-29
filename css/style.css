@@ -115,21 +115,20 @@ header .title {
   border: rgba(117, 98, 208, 0.722) solid 5px;
   cursor: pointer;
   opacity: 1;
-  width: 100%;
-  -moz-transform: scale(1.03);
-  --webkit-transform: scale(1.03);
-  transform: scale(1.03);
+  /* -moz-transform: scale(1.1);
+  --webkit-transform: scale(1.1); */
+  transform: scale(1.05);
 }
 
 .skin-name {
-  background-color: rgba(117, 98, 208, 0.722);
-  color: rgb(238, 255, 0);
+  background-color: rgba(151, 140, 206, 0.722);
   font-style: oblique;
   font-size: 24px;
   border-radius: 30px;
   margin-top: 3px;
   padding: 8px;
 }
+
 .little-ball {
   font-size: 30px;
 }
