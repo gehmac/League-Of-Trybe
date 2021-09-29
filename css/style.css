@@ -73,7 +73,7 @@ header .title {
 }
 
 .champion:hover {
-  transform:scale(1.2);
+  transform: scale(1.2);
   box-shadow: 2px;
   z-index: 2;
 }
@@ -133,6 +133,13 @@ header .title {
 #left #site-search:focus {
   border-color: rgb(26, 125, 201);
   box-shadow: 0 0 8px 0 rgb(50, 121, 196);
+
+.little-ball {
+  font-size: 30px;
+}
+
+.selected-ball {
+  font-size: 50px;
 }
 
 #rigth {
@@ -155,7 +162,7 @@ header .title {
   margin-top: 10px;
   font-size: 20px;
   font-family: 'Oswald';
-} 
+}
 
 #rigth #hidden-section #lore-class {
   display: flex;
@@ -165,7 +172,7 @@ header .title {
   margin: 20px 0;
 }
 
-#lore-class #champion-lore{
+#lore-class #champion-lore {
   width: 75%;
 }
 
