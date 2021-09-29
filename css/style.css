@@ -14,7 +14,7 @@ body {
 
 header {
   background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
-  color: rgb(239, 197, 30);
+  color: rgb(255, 210, 30);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -123,22 +123,17 @@ header .title {
 }
 
 #left #site-search {
+  font-family: 'Merriweather', serif;
   padding: 10px;
   border-radius: 20px;
-  border: none;
+  border: 1px solid;
   outline: none;
 }
 
-.fa-search {
-  background-color: white;
-}
-
 #left #site-search:focus {
-  border-color: rgb(240, 157, 13);
-  box-shadow: 0 0 8px 0 rgb(13, 96, 240);
+  border-color: rgb(26, 125, 201);
+  box-shadow: 0 0 8px 0 rgb(50, 121, 196);
 }
-
-
 
 #rigth {
   display: flex;
