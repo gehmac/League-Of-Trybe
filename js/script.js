@@ -8,7 +8,7 @@ const nameSection = document.querySelector('#champion-name');
 const loreSection = document.querySelector('#champion-lore');
 const classSection = document.querySelector('#champion-class');
 const championImg = document.querySelector('#champion-img');
-const nomeCampeao = document.querySelector('#nomeCampeao');
+const nomeCampeao = document.querySelector('#nome-campeao');
 const skinNameSection = document.querySelector('.skin-name');
 const skinsCounterSection = document.querySelector('#skins-counter');
 
