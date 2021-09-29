@@ -1,6 +1,6 @@
 const main = document.querySelector('.main');
 const sectionRigth = document.querySelector('#rigth')
-const championsHTML = document.querySelector('.champions');
+const championsSection = document.querySelector('.champions');
 const championImg = document.querySelector('#champion-img');
 
 let skinIndex = 0;
@@ -70,7 +70,7 @@ const renderChampion = (championName) => {
   img.className = 'champion';
   img.src = championImgURL;
   img.addEventListener('click', handleChampionClick);
-  championsHTML.appendChild(img);
+  championsSection.appendChild(img);
 };
 
 const renderAllChampions = (championsList) => {
@@ -105,5 +105,28 @@ const changeSkinButtons = () => {
   }));
 }
 
+const renderFilteredChampions = (filteredChampions) => {
+  filteredChampions.forEach(champion => renderChampion(champion));
+};
+
+const searchChampion = async (event) => {
+  const keyValue = event.target.value.toLowerCase();
+  const championsList = await getChampionsList();
+  const listInLowerCase = championsList.map((name) => name.toLowerCase());
+  const indexes = [];
+  listInLowerCase.forEach((champion, index) => {
+    if (champion.includes(keyValue)) indexes.push(index);
+  });  
+  championsSection.innerHTML = '';
+  indexes.forEach((index) => renderChampion(championsList[index]));
+}
+
+const addListenerToInput = () => {
+  const inputKey = document.querySelector('#site-search');
+
+  inputKey.addEventListener('keyup', searchChampion);
+}
+
 start();
 changeSkinButtons();
+addListenerToInput();
