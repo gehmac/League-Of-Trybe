@@ -38,7 +38,7 @@ const showInfo = ({
   loreSection.innerText = '🡆' + lore;
   classSection.innerText = '🡆' + tags;
   championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinIndex}.jpg`;
-  skinsSection.innerText = `${skinsAmount} skins;`;
+  skinsSection.innerText = `${skinsAmount} skins`;
 };
 
 const changeVisibility = () => {

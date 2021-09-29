@@ -37,6 +37,8 @@ header {
 #left {
   padding: 20px 20px;
   width: 40%;
+  /* height: auto; */
+  /* overflow:auto; */
 }
 
 #rigth {
