@@ -156,7 +156,29 @@ const changeSkinButtons = () => {
       championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
     }
   }));
+};
+
+const renderFilteredChampions = (filteredChampions) => {
+  filteredChampions.forEach(champion => renderChampion(champion));
+};
+
+const searchChampion = async (event) => {
+  const keyValue = event.target.value.toLowerCase();
+  const championsList = await getChampionsList();
+  const listInLowerCase = championsList.map((name) => name.toLowerCase());
+  const indexes = [];
+  listInLowerCase.forEach((champion, index) => {
+    if (champion.includes(keyValue)) indexes.push(index);
+  });  
+  championsSection.innerHTML = '';
+  indexes.forEach((index) => renderChampion(championsList[index]));
 }
+
+const addListenerToInput = () => {
+  const inputKey = document.querySelector('#site-search');
+
+  inputKey.addEventListener('keyup', searchChampion);
+};
 
 const start = async () => {
   const championsList = await getChampionsList();
@@ -165,3 +187,4 @@ const start = async () => {
 
 start();
 changeSkinButtons();
+addListenerToInput();
