@@ -7,14 +7,15 @@
 body {
   background-image: url('../img/background.jpg');
   background-repeat: no-repeat;
-  background-color: rgb(15, 36, 0);
+  background-size: cover;
+  background-color: rgb(2, 3, 33);
   font-family: 'Oswald';
   color: rgb(237, 237, 237);
 }
 
 header {
   background-color: rgb(27, 27, 27);
-  color: green;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
