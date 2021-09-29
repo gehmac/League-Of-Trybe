@@ -116,6 +116,9 @@ header .title {
   opacity: 1;
   border: rgba(117, 98, 208, 0.722) solid 5px;
   cursor: pointer;
+  -moz-transform: scale(1.05);
+  --webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .little-ball {
