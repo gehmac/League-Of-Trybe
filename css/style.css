@@ -112,15 +112,24 @@ header .title {
 }
 
 .champion-img:hover {
-  width: 130%;
-  opacity: 1;
   border: rgba(117, 98, 208, 0.722) solid 5px;
   cursor: pointer;
-  -moz-transform: scale(1.05);
-  --webkit-transform: scale(1.05);
-  transform: scale(1.05);
+  opacity: 1;
+  width: 130%;
+  -moz-transform: scale(1.03);
+  --webkit-transform: scale(1.03);
+  transform: scale(1.03);
 }
 
+.skin-name {
+  background-color: rgba(117, 98, 208, 0.722);
+  color: rgb(238, 255, 0);
+  font-style: oblique;
+  font-size: 24px;
+  border-radius: 30px;
+  margin-top: 3px;
+  padding: 8px;
+}
 .little-ball {
   font-size: 30px;
 }
