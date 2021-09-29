@@ -8,6 +8,7 @@ const nameSection = document.querySelector('#champion-name');
 const loreSection = document.querySelector('#champion-lore');
 const classSection = document.querySelector('#champion-class');
 const championImg = document.querySelector('#champion-img');
+const nomeCampeao = document.querySelector('#nomeCampeao');
 const skinNameSection = document.querySelector('.skin-name');
 const skinsCounterSection = document.querySelector('#skins-counter');
 
@@ -111,6 +112,12 @@ const renderChampion = (championName) => {
   img.className = 'champion';
   img.src = championImgURL;
   img.addEventListener('click', handleChampionClick);
+  img.addEventListener('mouseover', () => {
+    nomeCampeao.innerText = `Nome do Champion: ${championName}`;
+  });
+  img.addEventListener('mouseout', () => {
+    nomeCampeao.innerText = '';
+  });
   championsSection.appendChild(img);
 };
 

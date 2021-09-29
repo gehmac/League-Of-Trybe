@@ -16,13 +16,17 @@ header {
   background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
   color: rgb(255, 210, 30);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  align-content: center;
   height: 60px;
 }
 
+header #nome-campeao {
+  width: 40%;
+}
+
 header .title {
+  width: 40%;
   font-family: 'Merriweather', serif;
   text-transform: uppercase;
   font-size: 20px;
