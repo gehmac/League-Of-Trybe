@@ -115,7 +115,7 @@ header .title {
   border: rgba(117, 98, 208, 0.722) solid 5px;
   cursor: pointer;
   opacity: 1;
-  width: 130%;
+  width: 100%;
   -moz-transform: scale(1.03);
   --webkit-transform: scale(1.03);
   transform: scale(1.03);
