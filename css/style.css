@@ -5,19 +5,33 @@
 }
 
 body {
-  background: rgb(214, 214, 214);
-  color: black;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Oswald';
-  padding: 20px;
+  color: rgb(237, 237, 237);
 }
 
 header {
-  background-color: rgb(27, 27, 27);
-  color: green;
+  background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
+  color: rgb(255, 210, 30);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  align-content: center;
+  height: 60px;
+}
+
+header #nome-campeao {
+  width: 40%;
+}
+
+header .title {
+  width: 40%;
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .main {
@@ -53,18 +67,23 @@ header {
   align-items: middle;
   width: 100%;
   cursor: pointer;
+  background-color: rgba(4, 11, 33, 0.797);
 }
 
 .champion {
-  margin-bottom: 20px;
-  margin-left: 10px;
-  height: 90px;
+  padding: 2px;
+  height: 70px;
   transition: 0.2s;
 }
 
 .champion:hover {
-  height: 105px;
-  margin-bottom: 5px;
+  transform: scale(1.2);
+  box-shadow: 2px;
+  z-index: 2;
+}
+
+.champion:active {
+  padding: 10px;
 }
 
 .hidden {
@@ -91,4 +110,109 @@ header {
 
 .champion-img {
   width: 80%;
+  opacity: 0.9;
+  transition: 0.4s;
+  border: rgba(117, 98, 208, 0.722) solid 1px;
+}
+
+.champion-img:hover {
+  border: rgba(117, 98, 208, 0.722) solid 5px;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.skin-name {
+  background-color: rgba(4, 11, 33, 0.797);
+  font-size: 24px;
+  border-radius: 30px;
+  margin-top: 3px;
+  padding: 8px;
+}
+
+#skins-counter {
+  margin-top: 10px;
+}
+
+.little-ball {
+  background-color: rgba(4, 11, 33, 0.797);
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.selected-ball {
+  font-size: 50px;
+}
+
+#left #search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(4, 11, 33, 0.797);
+  border-radius: 20px 20px 0 0;
+}
+
+#left #search label {
+  font-family: 'Merriweather', serif;
+}
+
+#left #site-search {
+  font-family: 'Merriweather', serif;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  outline: none;
+}
+
+#left #site-search:focus {
+  border-color: rgb(26, 125, 201);
+  box-shadow: 0 0 8px 0 rgb(50, 121, 196);
+}
+
+#rigth {
+  display: flex;
+  font-family: 'Merriweather', serif;
+}
+
+#rigth #hidden-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rigth #hidden-section #champion-name {
+  font-size: 40px;
+}
+
+#rigth #hidden-section #champion-title {
+  color: rgb(189, 189, 189);
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Oswald';
+}
+
+#rigth #hidden-section #lore-class {
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(225, 225, 225);
+  font-family: 'Oswald';
+  margin: 20px 0;
+}
+
+#lore-class #champion-lore {
+  width: 75%;
+}
+
+#lore-class #champion-class {
+  display: flex;
+  text-align: center;
+  font-family: 'Merryweather', serif;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: rgba(117, 98, 208, 0.722);
+  align-items: center;
+  padding: 20px;
 }
