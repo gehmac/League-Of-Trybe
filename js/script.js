@@ -113,7 +113,7 @@ const renderChampion = (championName) => {
   img.src = championImgURL;
   img.addEventListener('click', handleChampionClick);
   img.addEventListener('mouseover', () => {
-    nomeCampeao.innerText = `NOME DO CAMPEÃO: ${championName}`;
+    nomeCampeao.innerText = `Nome do Champion: ${championName}`;
   });
   img.addEventListener('mouseout', () => {
     nomeCampeao.innerText = '';
