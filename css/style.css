@@ -106,6 +106,16 @@ header .title {
 
 .champion-img {
   width: 80%;
+  opacity: 0.9;
+  transition: 0.4s;
+  border: rgba(117, 98, 208, 0.722) solid 1px;
+}
+
+.champion-img:hover {
+  width: 130%;
+  opacity: 1;
+  border: rgba(117, 98, 208, 0.722) solid 5px;
+  cursor: pointer;
 }
 
 #rigth {
@@ -119,8 +129,7 @@ header .title {
   align-items: center;
 }
 
-#rigth #hidden-section #champion-name {
-  
+#rigth #hidden-section #champion-name { 
   font-size: 40px;
 }
 
@@ -139,7 +148,7 @@ header .title {
   margin: 20px 0;
 }
 
-#lore-class #champion-lore{
+#lore-class #champion-lore {
   width: 75%;
 }
 
