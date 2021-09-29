@@ -33,10 +33,11 @@ const showInfo = ({
   selectedChampionSkinsNumbers = skins.map((skin) => skin.num);
 
 
-  nameSection.innerText = '🡆' + name;
-  titleSection.innerText = '🡆' + title;
-  loreSection.innerText = '🡆' + lore;
-  classSection.innerText = '🡆' + tags;
+  nameSection.innerText = name;
+  titleSection.innerText = title;
+  //troquei para html pois vem tags da api
+  loreSection.innerHTML = lore;
+  classSection.innerText = tags;
   championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinNumber}.jpg`;
   skinsSection.innerText = `${skinsAmount} skins;`;
 };
