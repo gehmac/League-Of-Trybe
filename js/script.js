@@ -14,7 +14,6 @@ const getChampionInfo = async (championName) => {
   return championObject;
 }
 
-// const showInfo = (championObject) => {
 const showInfo = ({
   name,
   title,
