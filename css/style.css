@@ -8,19 +8,26 @@ body {
   background-image: url('../img/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(2, 3, 33);
   font-family: 'Oswald';
   color: rgb(237, 237, 237);
 }
 
 header {
-  background-color: rgb(27, 27, 27);
-  color: rgb(255, 255, 255);
+  background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
+  color: rgb(239, 197, 30);
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  height: 50px;
+  height: 60px;
+}
+
+header .title {
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .main {
