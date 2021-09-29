@@ -46,7 +46,7 @@ header {
   align-items: middle;
   width: 100%;
   cursor: pointer;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(4, 11, 33, 0.797);
 }
 
 .champion {
