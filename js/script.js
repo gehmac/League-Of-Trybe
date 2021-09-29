@@ -1,8 +1,15 @@
 const main = document.querySelector('.main');
+const firstScreen = document.querySelector('#first-screen');
+const hiddenSection = document.querySelector('#hidden-section');
 const sectionRigth = document.querySelector('#rigth')
-const championsHTML = document.querySelector('.champions');
+const championsSection = document.querySelector('.champions');
+const titleSection = document.querySelector('#champion-title');
+const nameSection = document.querySelector('#champion-name');
+const loreSection = document.querySelector('#champion-lore');
+const classSection = document.querySelector('#champion-class');
 const championImg = document.querySelector('#champion-img');
 const skinNameSection = document.querySelector('.skin-name');
+const skinsCounterSection = document.querySelector('#skins-counter');
 
 
 let skinIndex = 0;
@@ -16,6 +23,45 @@ const getChampionInfo = async (championName) => {
   return championObject;
 }
 
+const resetSkinCounter = () => {
+  skinsCounterSection.innerHTML = '';
+};
+
+const selectLittleBall = (option) => {
+  const previousSelectedBall = document.querySelector('.selected-ball');
+  previousSelectedBall.classList.remove('selected-ball');
+  if (option === 'previous') {
+    previousSelectedBall.previousElementSibling.classList.add('selected-ball');
+  }
+  if (option === 'next') {
+    previousSelectedBall.nextElementSibling.classList.add('selected-ball');
+  }
+  if (option === 'first') {
+    skinsCounterSection.firstElementChild.classList.add('selected-ball');
+  }
+  if (option === 'last') {
+    skinsCounterSection.lastElementChild.classList.add('selected-ball');
+  }
+
+};
+
+const createLittleBall = () => {
+  const littleBall = document.createElement('span');
+  littleBall.innerText = '✤';
+  littleBall.className = 'little-ball';
+  return littleBall;
+};
+
+const appendLittleBalls = (amount) => {
+  for (let index = 1; index <= amount; index += 1) {
+    const littleBall = createLittleBall();
+    skinsCounterSection.appendChild(littleBall);
+    if (index === 1) {
+      littleBall.classList.add('selected-ball');
+    }
+  }
+};
+
 const showInfo = ({
   name,
   title,
@@ -24,11 +70,6 @@ const showInfo = ({
   skins,
   id,
 }) => {
-  const nameSection = document.querySelector('#champion-name');
-  const titleSection = document.querySelector('#champion-title');
-  const loreSection = document.querySelector('#champion-lore');
-  const classSection = document.querySelector('#champion-class');
-  const skinsSection = document.querySelector('#skins-counter');
   const skinsAmount = skins.length;
   lastSkinIndex = skinsAmount - 1;
   selectedChampionSkins = skins;
@@ -39,13 +80,12 @@ const showInfo = ({
   classSection.innerText = tags;
   skinNameSection.innerText = 'Padrão';
   championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skinIndex}.jpg`;
-  skinsSection.innerText = `${skinsAmount} skins`;
+
+  resetSkinCounter();
+  appendLittleBalls(skinsAmount);
 };
 
 const changeVisibility = () => {
-  const firstScreen = document.querySelector('#first-screen');
-  const hiddenSection = document.querySelector('#hidden-section');
-
   firstScreen.classList.add('hidden');
   hiddenSection.classList.remove('hidden');
 };
@@ -71,13 +111,12 @@ const renderChampion = (championName) => {
   img.className = 'champion';
   img.src = championImgURL;
   img.addEventListener('click', handleChampionClick);
-  championsHTML.appendChild(img);
+  championsSection.appendChild(img);
 };
 
 const renderAllChampions = (championsList) => {
   championsList.forEach(champion => renderChampion(champion));
 };
-
 
 const getChampionsList = async () => {
   const response = await fetch('https://ddragon.leagueoflegends.com/cdn/11.19.1/data/pt_BR/champion.json');
@@ -86,27 +125,43 @@ const getChampionsList = async () => {
   return championsList;
 };
 
-const start = async () => {
-  const championsList = await getChampionsList();
-  renderAllChampions(championsList);
-};
-
 const changeSkinButtons = () => {
   const arrows = document.querySelectorAll('.arrow');
   arrows.forEach(arrow => arrow.addEventListener('click', event => {
     const currentChampion = document.querySelector('.selected-champion');
-    if (event.target.classList.contains('left-arrow') && skinIndex > 0) {
-      skinIndex -= 1;
+    if (event.target.classList.contains('left-arrow') && skinIndex >= 0) {
+      if (skinIndex === 0) {
+        skinIndex = lastSkinIndex;
+        selectLittleBall('last');
+        skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
+      } else {
+        skinIndex -= 1;
+        selectLittleBall('previous');
+      }
       championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
-      skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
+      if (skinIndex === 0) {
+        skinNameSection.innerText = `Padrão`;
+      }
     }
-    if (event.target.classList.contains('rigth-arrow') && skinIndex < lastSkinIndex) {
-      skinIndex += 1;
+    if (event.target.classList.contains('rigth-arrow') && skinIndex <= lastSkinIndex) {
+      if (skinIndex === lastSkinIndex) {
+        skinIndex = 0;
+        selectLittleBall('first');
+        skinNameSection.innerText = `Padrão`;
+      } else {
+        skinIndex += 1;
+        selectLittleBall('next');
+        skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
+      }
       championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
-      skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
     }
   }));
 }
+
+const start = async () => {
+  const championsList = await getChampionsList();
+  renderAllChampions(championsList);
+};
 
 start();
 changeSkinButtons();
