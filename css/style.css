@@ -5,19 +5,29 @@
 }
 
 body {
-  background: rgb(214, 214, 214);
-  color: black;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Oswald';
-  padding: 20px;
+  color: rgb(237, 237, 237);
 }
 
 header {
-  background-color: rgb(27, 27, 27);
-  color: green;
+  background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
+  color: rgb(239, 197, 30);
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  height: 60px;
+}
+
+header .title {
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .main {
@@ -53,18 +63,23 @@ header {
   align-items: middle;
   width: 100%;
   cursor: pointer;
+  background-color: rgba(4, 11, 33, 0.797);
 }
 
 .champion {
-  margin-bottom: 20px;
-  margin-left: 10px;
-  height: 90px;
+  padding: 2px;
+  height: 70px;
   transition: 0.2s;
 }
 
 .champion:hover {
-  height: 105px;
-  margin-bottom: 5px;
+  transform:scale(1.2);
+  box-shadow: 2px;
+  z-index: 2;
+}
+
+.champion:active {
+  padding: 10px;
 }
 
 .hidden {
@@ -91,4 +106,50 @@ header {
 
 .champion-img {
   width: 80%;
+}
+
+#rigth {
+  display: flex;
+  font-family: 'Merriweather', serif;
+}
+
+#rigth #hidden-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rigth #hidden-section #champion-name {
+  
+  font-size: 40px;
+}
+
+#rigth #hidden-section #champion-title {
+  color: rgb(189, 189, 189);
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Oswald';
+} 
+
+#rigth #hidden-section #lore-class {
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(225, 225, 225);
+  font-family: 'Oswald';
+  margin: 20px 0;
+}
+
+#lore-class #champion-lore{
+  width: 75%;
+}
+
+#lore-class #champion-class {
+  display: flex;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: rgba(117, 98, 208, 0.722);
+  align-items: center;
+  padding: 20px;
 }
