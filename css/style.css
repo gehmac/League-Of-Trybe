@@ -106,6 +106,27 @@ header .title {
 
 .champion-img {
   width: 80%;
+  opacity: 0.9;
+  transition: 0.4s;
+  border: rgba(117, 98, 208, 0.722) solid 1px;
+}
+
+.champion-img:hover {
+  border: rgba(117, 98, 208, 0.722) solid 5px;
+  cursor: pointer;
+  opacity: 1;
+  /* -moz-transform: scale(1.1);
+  --webkit-transform: scale(1.1); */
+  transform: scale(1.05);
+}
+
+.skin-name {
+  background-color: rgba(151, 140, 206, 0.722);
+  font-style: oblique;
+  font-size: 24px;
+  border-radius: 30px;
+  margin-top: 3px;
+  padding: 8px;
 }
 
 #left #search {
