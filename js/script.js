@@ -43,7 +43,6 @@ const selectLittleBall = (option) => {
   if (option === 'last') {
     skinsCounterSection.lastElementChild.classList.add('selected-ball');
   }
-
 };
 
 const createLittleBall = () => {
@@ -140,11 +139,11 @@ const changeSkinButtons = () => {
       if (skinIndex === 0) {
         skinIndex = lastSkinIndex;
         selectLittleBall('last');
-        skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
       } else {
         skinIndex -= 1;
         selectLittleBall('previous');
       }
+      skinNameSection.innerText = selectedChampionSkins[skinIndex].name;
       championImg.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${currentChampion.id}_${selectedChampionSkins[skinIndex].num}.jpg`;
       if (skinIndex === 0) {
         skinNameSection.innerText = `Padrão`;
@@ -183,7 +182,6 @@ const searchChampion = async (event) => {
 
 const addListenerToInput = () => {
   const inputKey = document.querySelector('#site-search');
-
   inputKey.addEventListener('keyup', searchChampion);
 };
 
