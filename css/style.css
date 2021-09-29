@@ -40,7 +40,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: middle;
   width: 100%;
   cursor: pointer;
 }
@@ -57,8 +57,28 @@ header {
   margin-bottom: 5px;
 }
 
-#first-screen {
+.hidden {
   position: absolute;
-  /* visibility: hidden; */
+  visibility: hidden;
+}
 
+.skins-section {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  text-align: center;
+  font-size: 40px;
+  width: 10%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  font-size: 55px;
+}
+
+.champion-img {
+  width: 80%;
 }
