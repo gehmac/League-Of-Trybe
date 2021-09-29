@@ -114,12 +114,24 @@ header {
 } 
 
 #rigth #hidden-section #lore-class {
-  color: rgb(225, 225, 225);
   display: flex;
+  justify-content: space-evenly;
+  color: rgb(225, 225, 225);
   font-family: 'Oswald';
   margin: 20px 0;
 }
 
 #lore-class #champion-lore{
   width: 75%;
+}
+
+#lore-class #champion-class {
+  display: flex;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: rgba(117, 98, 208, 0.722);
+  align-items: center;
+  padding: 20px;
 }
