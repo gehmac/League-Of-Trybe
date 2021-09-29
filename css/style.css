@@ -73,7 +73,7 @@ header .title {
 }
 
 .champion:hover {
-  transform:scale(1.2);
+  transform: scale(1.2);
   box-shadow: 2px;
   z-index: 2;
 }
@@ -108,6 +108,14 @@ header .title {
   width: 80%;
 }
 
+.little-ball {
+  font-size: 30px;
+}
+
+.selected-ball {
+  font-size: 50px;
+}
+
 #rigth {
   display: flex;
   font-family: 'Merriweather', serif;
@@ -120,7 +128,7 @@ header .title {
 }
 
 #rigth #hidden-section #champion-name {
-  
+
   font-size: 40px;
 }
 
@@ -129,7 +137,7 @@ header .title {
   margin-top: 10px;
   font-size: 20px;
   font-family: 'Oswald';
-} 
+}
 
 #rigth #hidden-section #lore-class {
   display: flex;
@@ -139,7 +147,7 @@ header .title {
   margin: 20px 0;
 }
 
-#lore-class #champion-lore{
+#lore-class #champion-lore {
   width: 75%;
 }
 
