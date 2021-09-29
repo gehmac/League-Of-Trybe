@@ -16,7 +16,7 @@ header {
   background: linear-gradient(0.25turn, rgb(9, 22, 43), rgb(0, 12, 28));
   color: rgb(255, 210, 30);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 60px;
 }
