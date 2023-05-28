@@ -16,9 +16,18 @@ const skinsCounterSection = document.querySelector('#skins-counter');
 let skinIndex = 0;
 let lastSkinIndex = 0;
 let selectedChampionSkins = [];
+let version = ''
+
+const getCurrentVersion = async () => {
+   await fetch('https://ddragon.leagueoflegends.com/api/versions.json')
+   .then((valorQueRecebiDoFetch) => valorQueRecebiDoFetch.json())
+   .then((valorDoJson) => {
+    version = valorDoJson[0]
+   });
+}
 
 const getChampionInfo = async (championName) => {
-  const result = await fetch(`https://ddragon.leagueoflegends.com/cdn/11.19.1/data/pt_BR/champion/${championName}.json`);
+  const result = await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/champion/${championName}.json`);
   const convertedResult = await result.json();
   const championObject = Object.values(convertedResult.data)[0];
   return championObject;
@@ -105,7 +114,7 @@ const handleChampionClick = async (event) => {
 }
 
 const renderChampion = (championName) => {
-  const championImgURL = `http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${championName}.png`;
+  const championImgURL = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
   const img = document.createElement('img');
   img.id = championName;
   img.className = 'champion';
@@ -125,7 +134,7 @@ const renderAllChampions = (championsList) => {
 };
 
 const getChampionsList = async () => {
-  const response = await fetch('https://ddragon.leagueoflegends.com/cdn/11.19.1/data/pt_BR/champion.json');
+  const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/champion.json`);
   const translatedResponse = await response.json();
   const championsList = Object.keys(translatedResponse.data);
   return championsList;
@@ -186,6 +195,7 @@ const addListenerToInput = () => {
 };
 
 const start = async () => {
+  await getCurrentVersion()
   const championsList = await getChampionsList();
   renderAllChampions(championsList);
 };
